@@ -1,0 +1,306 @@
+/* Office Location & Contact Styles */
+.location-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.office-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-slate-200);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.office-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.office-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-teal-600);
+  margin-bottom: 0.35rem;
+}
+
+.office-name {
+  font-size: 1.5rem;
+  color: var(--color-navy-950);
+  margin-bottom: 0.35rem;
+}
+
+.office-address {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-slate-600);
+}
+
+.live-hours-status-box {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid;
+  font-size: 0.8125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.live-hours-status-box.is-open {
+  background-color: var(--color-success-bg);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #065F46;
+}
+
+.live-hours-status-box.is-closed {
+  background-color: #FFFBEB;
+  border-color: rgba(245, 158, 11, 0.3);
+  color: #92400E;
+}
+
+.status-indicator-header {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.status-subtext {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+/* Office Buttons */
+.office-contact-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.office-btn {
+  width: 100%;
+}
+
+/* Details List */
+.office-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--color-slate-200);
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.detail-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-sand-100);
+  color: var(--color-teal-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-slate-500);
+  font-weight: 600;
+}
+
+.detail-val {
+  font-size: 0.95rem;
+  color: var(--color-navy-950);
+}
+
+/* Operating Hours Table */
+.office-hours-block {
+  background-color: var(--color-sand-50);
+  border: 1px solid var(--color-slate-200);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.hours-block-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-navy-950);
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-slate-200);
+}
+
+.hours-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--color-slate-700);
+}
+
+.hours-day {
+  font-weight: 500;
+}
+
+.hours-time {
+  font-weight: 600;
+  color: var(--color-navy-950);
+}
+
+.hours-time.text-closed {
+  color: var(--color-slate-400);
+}
+
+.hours-note {
+  font-size: 0.75rem;
+  color: var(--color-slate-500);
+  margin-top: 0.85rem;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+/* Right Column: Direct Message */
+.direct-message-card {
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-slate-200);
+  border-radius: var(--radius-xl);
+}
+
+.message-header {
+  margin-bottom: 1.5rem;
+}
+
+.message-header h4 {
+  font-size: 1.25rem;
+  color: var(--color-navy-950);
+  margin-bottom: 0.35rem;
+}
+
+.message-header p {
+  font-size: 0.875rem;
+  color: var(--color-slate-600);
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.message-sent-confirmation {
+  text-align: center;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.message-sent-confirmation h5 {
+  font-size: 1.25rem;
+  color: var(--color-navy-950);
+}
+
+.message-sent-confirmation p {
+  font-size: 0.9rem;
+  color: var(--color-slate-600);
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+/* Map Preview */
+.map-preview-card {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-slate-200);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--color-white);
+}
+
+.map-visual {
+  width: 100%;
+  height: 220px;
+}
+
+.map-footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  background-color: var(--color-sand-50);
+  font-size: 0.8125rem;
+}
+
+.map-geo-info {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--color-slate-600);
+}
+
+.map-open-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-teal-600);
+  font-weight: 600;
+}
+
+.map-open-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .office-card {
+    padding: 1.5rem;
+  }
+  .office-contact-buttons {
+    grid-template-columns: 1fr;
+  }
+  .form-actions {
+    flex-direction: column;
+  }
+  .form-actions .btn {
+    width: 100%;
+  }
+}

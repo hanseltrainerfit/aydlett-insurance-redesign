@@ -1,0 +1,307 @@
+/* Quote Modal Styles */
+.quote-modal-card {
+  max-width: 640px;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.quote-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5rem 1.75rem 1rem 1.75rem;
+  border-bottom: 1px solid var(--color-slate-100);
+  background-color: var(--color-sand-50);
+}
+
+.quote-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-teal-600);
+  background-color: var(--color-teal-100);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.35rem;
+}
+
+.quote-modal-title {
+  font-size: 1.35rem;
+  color: var(--color-navy-950);
+}
+
+.modal-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-slate-500);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-slate-200);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background-color: var(--color-sand-100);
+  color: var(--color-navy-950);
+}
+
+/* Progress Indicator */
+.quote-progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 2rem;
+  background-color: var(--color-sand-100);
+  border-bottom: 1px solid var(--color-slate-200);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-slate-500);
+}
+
+.step-dot.active {
+  color: var(--color-teal-600);
+  font-weight: 700;
+}
+
+.step-line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: var(--color-slate-200);
+  margin: 0 1rem;
+}
+
+/* Body & Steps */
+.quote-modal-body {
+  padding: 1.75rem;
+  max-height: calc(85vh - 160px);
+  overflow-y: auto;
+}
+
+.step-instruction {
+  font-size: 0.95rem;
+  color: var(--color-slate-700);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+/* Step 1: Coverage Cards */
+.coverage-select-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.coverage-select-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-slate-200);
+  background-color: var(--color-sand-50);
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.coverage-select-card:hover {
+  border-color: var(--color-teal-400);
+  background-color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.coverage-select-card.is-selected {
+  border-color: var(--color-teal-500);
+  background-color: var(--color-teal-50);
+  box-shadow: 0 0 0 1px var(--color-teal-500);
+}
+
+.card-check-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-slate-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: var(--color-white);
+  color: var(--color-teal-600);
+}
+
+.coverage-select-card.is-selected .card-check-indicator {
+  border-color: var(--color-teal-500);
+  background-color: var(--color-teal-500);
+  color: var(--color-white);
+}
+
+.card-icon {
+  color: var(--color-teal-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-navy-950);
+}
+
+.card-sub {
+  font-size: 0.75rem;
+  color: var(--color-slate-500);
+}
+
+/* Radio Group */
+.radio-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.radio-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  border: 1.5px solid var(--color-slate-200);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-slate-800);
+  background-color: var(--color-sand-50);
+  transition: all var(--transition-fast);
+}
+
+.radio-pill:has(input:checked) {
+  border-color: var(--color-teal-500);
+  background-color: var(--color-teal-50);
+  color: var(--color-teal-600);
+  font-weight: 600;
+}
+
+.privacy-reassurance {
+  background-color: var(--color-sand-100);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.95rem;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--color-slate-600);
+  margin-top: 1rem;
+  border-left: 3px solid var(--color-teal-500);
+}
+
+/* Modal Footer Actions */
+.quote-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-slate-100);
+}
+
+.btn-back {
+  margin-right: auto;
+}
+
+.btn-next,
+.btn-submit-quote {
+  min-width: 160px;
+}
+
+/* Success View */
+.quote-success-view {
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.success-icon-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--color-teal-100);
+  margin: 0 auto 1.25rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote-success-view h3 {
+  font-size: 1.65rem;
+  color: var(--color-navy-950);
+  margin-bottom: 0.65rem;
+}
+
+.success-message {
+  font-size: 1rem;
+  color: var(--color-slate-600);
+  max-width: 500px;
+  margin: 0 auto 1.75rem auto;
+  line-height: 1.6;
+}
+
+.success-next-steps {
+  background-color: var(--color-sand-50);
+  border: 1px solid var(--color-slate-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-slate-700);
+}
+
+.step-item strong {
+  display: block;
+  color: var(--color-navy-950);
+}
+
+.compliance-disclaimer {
+  font-size: 0.75rem;
+  color: var(--color-slate-500);
+  line-height: 1.5;
+  margin-bottom: 1.75rem;
+  background-color: var(--color-sand-100);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  text-align: left;
+}
+
+.success-done-btn {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .coverage-select-grid {
+    grid-template-columns: 1fr;
+  }
+  .radio-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

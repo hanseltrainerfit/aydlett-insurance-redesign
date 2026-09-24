@@ -1,0 +1,134 @@
+/* Testimonials Styles */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.testimonial-card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-slate-200);
+}
+
+.testimonial-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.stars-row {
+  display: flex;
+  gap: 0.25rem;
+  color: #F59E0B;
+}
+
+.star-filled {
+  fill: #F59E0B;
+}
+
+.testimonial-quote {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-slate-700);
+  font-style: normal;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.testimonial-author-box {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-slate-100);
+}
+
+.author-avatar-initial {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-navy-800) 0%, var(--color-teal-600) 100%);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-navy-950);
+  font-style: normal;
+}
+
+.author-locality {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: var(--color-slate-500);
+  margin-top: 0.1rem;
+}
+
+.author-policy {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-teal-600);
+  margin-top: 0.15rem;
+}
+
+/* Carriers Trust Banner */
+.carriers-trust-banner {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-slate-200);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.carriers-trust-label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-slate-500);
+  margin-bottom: 1rem;
+}
+
+.carriers-pills-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.carrier-pill {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-navy-900);
+  background-color: var(--color-sand-50);
+  border: 1px solid var(--color-slate-200);
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+}
+
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}

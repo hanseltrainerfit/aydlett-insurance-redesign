@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <linearGradient id="aydlettGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A2540" />
+      <stop offset="100%" stop-color="#006699" />
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00A896" />
+      <stop offset="100%" stop-color="#028090" />
+    </linearGradient>
+  </defs>
+  <!-- Shield outline -->
+  <path d="M24 4 L40 10 C40 26 24 42 24 44 C24 42 8 26 8 10 Z" fill="url(#aydlettGrad)" />
+  <!-- Inner shield highlight -->
+  <path d="M24 8 L36 12.5 C36 24.5 24 37 24 38.5 C24 37 12 24.5 12 12.5 Z" fill="none" stroke="url(#tealGrad)" stroke-width="2.5" opacity="0.85" />
+  <!-- Letter A with coastal wave touch -->
+  <path d="M24 14 L17 31 H21 L22.5 27 H25.5 L27 31 H31 Z M24 20 L25 24 H23 Z" fill="#FFFFFF" />
+  <circle cx="24" cy="36" r="2" fill="#00A896" />
+</svg>
