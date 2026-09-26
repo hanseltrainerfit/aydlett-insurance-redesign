@@ -1,32 +1,71 @@
-# React + TypeScript + Vite
+# Aydlett Insurance Agency - Redesign Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Coastal independent insurance agency website built with React 19, Vite 6, and TypeScript. Optimized for high-speed delivery using **Cloudflare Workers Static Assets**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Local Development
 
-## React Compiler
+```bash
+# Install dependencies
+npm install
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Start local development server
+npm run dev
 
-## Expanding the Oxlint configuration
+# Preview local production build
+npm run preview
+```
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+---
 
-```json
+## Production Build
+
+```bash
+npm run build
+```
+
+This compiles TypeScript (`tsc -b`) and runs Vite (`vite build`), outputting the fully static production assets to the `dist` directory.
+
+---
+
+## Cloudflare Deployment (Workers Static Assets)
+
+This project is configured to deploy directly to **Cloudflare Workers** using the new **Static Assets** architecture.
+
+### Configuration (`wrangler.jsonc`)
+
+```jsonc
 {
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "aydlett-insurance-redesign",
+  "compatibility_date": "2026-09-25",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
   }
 }
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+- **Assets Directory:** `./dist`
+- **SPA Routing:** `"not_found_handling": "single-page-application"` routes all client-side navigation requests cleanly to `index.html`.
+
+### CLI Deployment Commands
+
+1. **Verify deployment bundle (dry run):**
+   ```bash
+   npx wrangler deploy --dry-run
+   ```
+
+2. **Deploy to Cloudflare Workers:**
+   ```bash
+   npx wrangler deploy
+   ```
+
+### Cloudflare Dashboard (Workers Builds / Git Integration)
+
+If connecting the GitHub repository (`hanseltrainerfit/aydlett-insurance-redesign`) directly via Cloudflare Workers Builds:
+
+- **Build command:** `npm run build`
+- **Deploy command:** `npx wrangler deploy`
+- **Root directory:** `/` (project root)
