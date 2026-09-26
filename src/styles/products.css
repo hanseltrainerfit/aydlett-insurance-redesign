@@ -1,4 +1,5 @@
-/* Products Section Styles */
+/* Products Section Styles - Premium Visual Coverage Catalog */
+
 .products-tabs {
   display: flex;
   justify-content: center;
@@ -35,74 +36,134 @@
 /* Products Grid */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
   margin-bottom: 3.5rem;
 }
 
+/* Product Card */
 .product-card {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 1.85rem;
+  padding: 0;
   background-color: var(--color-white);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-slate-200);
-  transition: all var(--transition-base);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
 }
 
 .product-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   border-color: var(--color-teal-400);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-xl);
 }
 
-.product-card-top {
+/* Card Media Header */
+.product-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 220px;
+  overflow: hidden;
+  background-color: var(--color-sand-200);
+}
+
+.product-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.product-card:hover .product-card-img {
+  transform: scale(1.04);
+}
+
+/* Floating Media Badges */
+.product-media-badges {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1.25rem;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  z-index: 2;
 }
 
-.product-icon-wrapper {
-  width: 48px;
-  height: 48px;
+.product-media-icon {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-md);
-  background-color: var(--color-teal-100);
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--color-teal-600);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 12px rgba(10, 25, 47, 0.12);
+  z-index: 2;
+  transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
 }
 
-.product-badges {
+.product-card:hover .product-media-icon {
+  transform: scale(1.06);
+  background-color: var(--color-teal-600);
+  color: var(--color-white);
+}
+
+/* Card Body Content */
+.product-card-body {
   display: flex;
-  gap: 0.35rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1.5rem 1.65rem 1.65rem;
+}
+
+.product-category-meta {
+  margin-bottom: 0.4rem;
+}
+
+.product-category-text {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-teal-600);
+  display: inline-block;
 }
 
 .product-name {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
+  font-weight: 700;
   margin-bottom: 0.35rem;
   color: var(--color-navy-950);
+  line-height: 1.35;
 }
 
 .product-tagline {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: var(--color-teal-600);
+  color: var(--color-slate-600);
   margin-bottom: 0.75rem;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .product-desc {
-  font-size: 0.925rem;
+  font-size: 0.9rem;
   color: var(--color-slate-600);
   margin-bottom: 1.25rem;
   line-height: 1.55;
-  flex-grow: 1;
 }
 
+/* Features List */
 .product-features {
   background-color: var(--color-sand-50);
   border-radius: var(--radius-sm);
@@ -112,12 +173,12 @@
 }
 
 .features-label {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: var(--color-slate-500);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.45rem;
 }
 
 .features-list {
@@ -125,6 +186,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  padding: 0;
+  margin: 0;
 }
 
 .feature-item {
@@ -133,6 +196,7 @@
   display: flex;
   align-items: flex-start;
   gap: 0.4rem;
+  line-height: 1.4;
 }
 
 .feature-bullet {
@@ -140,6 +204,7 @@
   font-weight: bold;
 }
 
+/* Notice Pill */
 .coastal-notice-pill {
   display: flex;
   align-items: flex-start;
@@ -165,17 +230,31 @@
   grid-template-columns: 1.6fr 1fr;
   gap: 0.65rem;
   margin-top: auto;
+  padding-top: 0.5rem;
 }
 
 .product-quote-btn {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.product-card:hover .product-quote-btn {
+  box-shadow: 0 4px 14px rgba(0, 168, 150, 0.3);
 }
 
 .product-details-btn {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
 }
 
-/* Bottom Banner */
+/* Bottom Consultation Banner */
 .products-bottom-banner {
   background: linear-gradient(135deg, var(--color-navy-950) 0%, var(--color-navy-800) 100%);
   border-radius: var(--radius-xl);
@@ -207,9 +286,38 @@
   flex-shrink: 0;
 }
 
-@media (max-width: 900px) {
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .product-card,
+  .product-card-img,
+  .product-media-icon,
+  .product-quote-btn {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .product-card-media {
+    max-height: 190px;
+  }
+}
+
+@media (max-width: 768px) {
   .products-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .product-card-media {
+    max-height: 220px;
+  }
+  .product-card-body {
+    padding: 1.25rem;
   }
   .products-bottom-banner {
     flex-direction: column;

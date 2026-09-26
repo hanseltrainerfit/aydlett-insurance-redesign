@@ -21,19 +21,29 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onOpenQuote, o
 
   const getProductIcon = (iconName: string) => {
     switch (iconName) {
-      case 'Home': return <Home size={22} />;
-      case 'Waves': return <Waves size={22} />;
-      case 'Car': return <Car size={22} />;
-      case 'Anchor': return <Anchor size={22} />;
-      case 'Key': return <Key size={22} />;
-      case 'Compass': return <Compass size={22} />;
-      case 'Truck': return <Truck size={22} />;
-      case 'HeartHandshake': return <HeartHandshake size={22} />;
-      case 'Building2': return <Building2 size={22} />;
-      case 'ShieldAlert': return <ShieldAlert size={22} />;
-      case 'Landmark': return <Landmark size={22} />;
-      case 'Users': return <Users size={22} />;
-      default: return <ShieldCheck size={22} />;
+      case 'Home': return <Home size={18} />;
+      case 'Waves': return <Waves size={18} />;
+      case 'Car': return <Car size={18} />;
+      case 'Anchor': return <Anchor size={18} />;
+      case 'Key': return <Key size={18} />;
+      case 'Compass': return <Compass size={18} />;
+      case 'Truck': return <Truck size={18} />;
+      case 'HeartHandshake': return <HeartHandshake size={18} />;
+      case 'Building2': return <Building2 size={18} />;
+      case 'ShieldAlert': return <ShieldAlert size={18} />;
+      case 'Landmark': return <Landmark size={18} />;
+      case 'Users': return <Users size={18} />;
+      default: return <ShieldCheck size={18} />;
+    }
+  };
+
+  const getCategoryLabel = (category: CoverageCategory) => {
+    switch (category) {
+      case 'coastal': return 'Coastal & Flood';
+      case 'personal': return 'Personal Coverage';
+      case 'recreational': return 'Marine & Recreation';
+      case 'commercial': return 'Commercial & Business';
+      default: return 'Specialized Coverage';
     }
   };
 
@@ -99,65 +109,86 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onOpenQuote, o
 
         {/* Products Grid */}
         <div className="products-grid">
-          {filteredProducts.map((product) => (
+          {filteredProducts.map((product, index) => (
             <div key={product.id} className="card product-card">
-              <div className="product-card-top">
-                <div className="product-icon-wrapper">
-                  {getProductIcon(product.iconName)}
-                </div>
-                <div className="product-badges">
-                  {product.popular && (
-                    <span className="tag tag-popular">Most Requested</span>
-                  )}
-                  {product.category === 'coastal' && (
-                    <span className="tag tag-coastal">Coastal Specific</span>
-                  )}
-                </div>
-              </div>
-
-              <h3 className="product-name">{product.name}</h3>
-              <p className="product-tagline">{product.tagline}</p>
-              <p className="product-desc">{product.shortDescription}</p>
-
-              {/* Key Features Bullet List */}
-              <div className="product-features">
-                <div className="features-label">Key Protections Include:</div>
-                <ul className="features-list">
-                  {product.keyFeatures.slice(0, 3).map((feat, idx) => (
-                    <li key={idx} className="feature-item">
-                      <span className="feature-bullet">•</span>
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Coastal Notice Callout if present */}
-              {product.coastalConsiderations && (
-                <div className="coastal-notice-pill">
-                  <Info size={13} className="coastal-notice-icon" />
-                  <span>{product.coastalConsiderations}</span>
+              {/* Card Media Header */}
+              {product.imageUrl && (
+                <div className="product-card-media">
+                  <picture>
+                    {product.imageWebpUrl && <source srcSet={product.imageWebpUrl} type="image/webp" />}
+                    <img
+                      src={product.imageUrl}
+                      alt={product.imageAlt || product.name}
+                      className="product-card-img"
+                      loading={index < 3 ? 'eager' : 'lazy'}
+                      decoding="async"
+                      width="960"
+                      height="540"
+                    />
+                  </picture>
+                  <div className="product-media-badges">
+                    {product.popular && (
+                      <span className="tag tag-popular">Most Requested</span>
+                    )}
+                    {product.category === 'coastal' && (
+                      <span className="tag tag-coastal">Coastal Specific</span>
+                    )}
+                  </div>
+                  <div className="product-media-icon" title={product.name}>
+                    {getProductIcon(product.iconName)}
+                  </div>
                 </div>
               )}
 
-              {/* Card Footer CTAs */}
-              <div className="product-card-actions">
-                <button
-                  onClick={() => onOpenQuote(product.id)}
-                  className="btn btn-primary product-quote-btn"
-                  title={`Request a Quote for ${product.name}`}
-                >
-                  <ShieldCheck size={16} />
-                  <span>Get a Quote</span>
-                </button>
-                <button
-                  onClick={() => onSelectProduct(product)}
-                  className="btn btn-secondary product-details-btn"
-                  title={`View Coverage Details for ${product.name}`}
-                >
-                  <span>Details</span>
-                  <ArrowRight size={14} />
-                </button>
+              <div className="product-card-body">
+                <div className="product-category-meta">
+                  <span className="product-category-text">{getCategoryLabel(product.category)}</span>
+                </div>
+
+                <h3 className="product-name">{product.name}</h3>
+                <p className="product-tagline">{product.tagline}</p>
+                <p className="product-desc">{product.shortDescription}</p>
+
+                {/* Key Features Bullet List */}
+                <div className="product-features">
+                  <div className="features-label">Key Protections Include:</div>
+                  <ul className="features-list">
+                    {product.keyFeatures.slice(0, 3).map((feat, idx) => (
+                      <li key={idx} className="feature-item">
+                        <span className="feature-bullet">•</span>
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Coastal Notice Callout if present */}
+                {product.coastalConsiderations && (
+                  <div className="coastal-notice-pill">
+                    <Info size={13} className="coastal-notice-icon" />
+                    <span>{product.coastalConsiderations}</span>
+                  </div>
+                )}
+
+                {/* Card Footer CTAs */}
+                <div className="product-card-actions">
+                  <button
+                    onClick={() => onOpenQuote(product.id)}
+                    className="btn btn-primary product-quote-btn"
+                    title={`Request a Quote for ${product.name}`}
+                  >
+                    <ShieldCheck size={16} />
+                    <span>Get a Quote</span>
+                  </button>
+                  <button
+                    onClick={() => onSelectProduct(product)}
+                    className="btn btn-secondary product-details-btn"
+                    title={`View Coverage Details for ${product.name}`}
+                  >
+                    <span>Details</span>
+                    <ArrowRight size={14} />
+                  </button>
+                </div>
               </div>
             </div>
           ))}
@@ -182,3 +213,5 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onOpenQuote, o
     </section>
   );
 };
+
+export default ProductsSection;

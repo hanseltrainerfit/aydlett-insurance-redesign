@@ -36,6 +36,20 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
           </button>
         </div>
 
+        {/* Editorial Media Banner */}
+        {product.imageUrl && (
+          <div className="product-modal-banner">
+            <picture>
+              {product.imageWebpUrl && <source srcSet={product.imageWebpUrl} type="image/webp" />}
+              <img
+                src={product.imageUrl}
+                alt={product.imageAlt || product.name}
+                className="product-modal-banner-img"
+              />
+            </picture>
+          </div>
+        )}
+
         {/* Content */}
         <div className="product-modal-content">
           <h2 id="prod-detail-title" className="prod-title">{product.name}</h2>

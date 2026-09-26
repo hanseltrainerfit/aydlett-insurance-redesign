@@ -17,7 +17,10 @@ export const insuranceProducts: InsuranceProduct[] = [
     ],
     coastalConsiderations: 'Coastal North Carolina homes often have specific percentage deductibles for named storms and hurricanes. Our agents help you clearly understand and optimize your deductible limits.',
     iconName: 'Home',
-    popular: true
+    popular: true,
+    imageUrl: '/images/coverages/homeowners-insurance.jpg',
+    imageWebpUrl: '/images/coverages/homeowners-insurance.webp',
+    imageAlt: 'Authentic coastal North Carolina elevated residential home in the Outer Banks'
   },
   {
     id: 'flood',
@@ -35,7 +38,10 @@ export const insuranceProducts: InsuranceProduct[] = [
     ],
     coastalConsiderations: 'The NFIP has a standard 30-day waiting period before coverage takes effect. Do not wait until a named storm enters the Atlantic basin.',
     iconName: 'Waves',
-    popular: true
+    popular: true,
+    imageUrl: '/images/coverages/coastal-flood-insurance.jpg',
+    imageWebpUrl: '/images/coverages/coastal-flood-insurance.webp',
+    imageAlt: 'Soundside coastal home on high pilings near the tidal shoreline in the Outer Banks'
   },
   {
     id: 'auto',
@@ -53,7 +59,10 @@ export const insuranceProducts: InsuranceProduct[] = [
     ],
     coastalConsiderations: 'Coastal driving exposes vehicles to salt air, sand, and localized roadway flooding. Comprehensive coverage protects against non-collision environmental hazards.',
     iconName: 'Car',
-    popular: true
+    popular: true,
+    imageUrl: '/images/coverages/auto-insurance.jpg',
+    imageWebpUrl: '/images/coverages/auto-insurance.webp',
+    imageAlt: 'Modern vehicle driving along scenic coastal North Carolina highway by ocean dunes'
   },
   {
     id: 'boat',
@@ -71,7 +80,10 @@ export const insuranceProducts: InsuranceProduct[] = [
     ],
     coastalConsiderations: 'Policies define specific navigational territories and hurricane haul-out plans. We help you select limits appropriate for North Carolina and Atlantic coastal navigation.',
     iconName: 'Anchor',
-    popular: true
+    popular: true,
+    imageUrl: '/images/coverages/boat-marine-insurance.jpg',
+    imageWebpUrl: '/images/coverages/boat-marine-insurance.webp',
+    imageAlt: 'Center console recreational fishing boat docked at an Outer Banks marina slip'
   },
   {
     id: 'renters',
@@ -87,7 +99,10 @@ export const insuranceProducts: InsuranceProduct[] = [
       'Temporary Living Expenses if Residence is Uninhabitable',
       'Generous discounts when bundled with auto insurance'
     ],
-    iconName: 'Key'
+    iconName: 'Key',
+    imageUrl: '/images/coverages/renters-insurance.jpg',
+    imageWebpUrl: '/images/coverages/renters-insurance.webp',
+    imageAlt: 'Cozy coastal rental living room interior protecting personal belongings and lifestyle'
   },
   {
     id: 'motorcycle',
@@ -103,7 +118,10 @@ export const insuranceProducts: InsuranceProduct[] = [
       'Roadside Assistance specifically equipped for motorcycles',
       'Seasonal and multi-bike discount structures'
     ],
-    iconName: 'Compass'
+    iconName: 'Compass',
+    imageUrl: '/images/coverages/motorcycle-powersports.jpg',
+    imageWebpUrl: '/images/coverages/motorcycle-powersports.webp',
+    imageAlt: 'Touring cruiser motorcycle parked along scenic coastal road overlooking the coast'
   },
   {
     id: 'rv',
@@ -119,7 +137,10 @@ export const insuranceProducts: InsuranceProduct[] = [
       'Emergency Expense & Lodging Allowance',
       'Full-Timer Coverage Options Available'
     ],
-    iconName: 'Truck'
+    iconName: 'Truck',
+    imageUrl: '/images/coverages/rv-trailer-insurance.jpg',
+    imageWebpUrl: '/images/coverages/rv-trailer-insurance.webp',
+    imageAlt: 'Recreational travel coastal dunes pathway at sunrise in the Outer Banks'
   },
   {
     id: 'life-health',
@@ -135,7 +156,10 @@ export const insuranceProducts: InsuranceProduct[] = [
       'Individual Health Plan Guidance (Managed Care & PPOs)',
       'Long-Term Care Financial Protection'
     ],
-    iconName: 'HeartHandshake'
+    iconName: 'HeartHandshake',
+    imageUrl: '/images/coverages/life-health-insurance.jpg',
+    imageWebpUrl: '/images/coverages/life-health-insurance.webp',
+    imageAlt: 'Family sharing safe coastal outdoor activities with peace of mind'
   },
   {
     id: 'bop',
@@ -153,7 +177,10 @@ export const insuranceProducts: InsuranceProduct[] = [
     ],
     coastalConsiderations: 'Seasonal coastal businesses experience fluctuating revenue. We tailor business interruption limits to protect peak seasonal earnings.',
     iconName: 'Building2',
-    popular: true
+    popular: true,
+    imageUrl: '/images/coverages/commercial-bop.jpg',
+    imageWebpUrl: '/images/coverages/commercial-bop.webp',
+    imageAlt: 'Independent coastal provisions storefront and cafe in the Outer Banks'
   },
   {
     id: 'general-liability',
@@ -169,7 +196,10 @@ export const insuranceProducts: InsuranceProduct[] = [
       'Personal & Advertising Injury (libel, slander, copyright)',
       'Full Legal Defense Costs outside policy limits on select policies'
     ],
-    iconName: 'ShieldAlert'
+    iconName: 'ShieldAlert',
+    imageUrl: '/images/coverages/general-liability.jpg',
+    imageWebpUrl: '/images/coverages/general-liability.webp',
+    imageAlt: 'Charming coastal boutique shopping street and customer walkway in North Carolina'
   },
   {
     id: 'commercial-property',
@@ -185,7 +215,10 @@ export const insuranceProducts: InsuranceProduct[] = [
       'Debris Removal & Ordinance or Law Coverage',
       'Specialized Coastal Endorsements'
     ],
-    iconName: 'Landmark'
+    iconName: 'Landmark',
+    imageUrl: '/images/coverages/commercial-property.jpg',
+    imageWebpUrl: '/images/coverages/commercial-property.webp',
+    imageAlt: 'Sturdy coastal architectural property and commercial structure in Dare County'
   },
   {
     id: 'commercial-auto',
@@ -201,7 +234,10 @@ export const insuranceProducts: InsuranceProduct[] = [
       'On-Board Equipment and Tool Coverage',
       'Flexible Driver Schedule & Multi-Vehicle Discounts'
     ],
-    iconName: 'Truck'
+    iconName: 'Truck',
+    imageUrl: '/images/coverages/commercial-auto.jpg',
+    imageWebpUrl: '/images/coverages/commercial-auto.webp',
+    imageAlt: 'Commercial vehicle on coastal roadway for business operations'
   },
   {
     id: 'workers-comp',
@@ -217,6 +253,9 @@ export const insuranceProducts: InsuranceProduct[] = [
       'Rehabilitation and Return-to-Work Services',
       'NC Industrial Commission Compliance Verification'
     ],
-    iconName: 'Users'
+    iconName: 'Users',
+    imageUrl: '/images/coverages/workers-compensation.jpg',
+    imageWebpUrl: '/images/coverages/workers-compensation.webp',
+    imageAlt: 'Quality craftsmanship and coastal construction site in the Outer Banks'
   }
 ];

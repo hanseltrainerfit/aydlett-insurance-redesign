@@ -11,6 +11,9 @@ export interface InsuranceProduct {
   coastalConsiderations?: string;
   iconName: string;
   popular?: boolean;
+  imageUrl?: string;
+  imageWebpUrl?: string;
+  imageAlt?: string;
 }
 
 export interface QuoteFormData {
